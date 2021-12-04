@@ -112,6 +112,20 @@ VALUES(
     '94025'
 );
 
+INSERT INTO PERSON 
+VALUES(
+    7,
+    'Hellen', 
+    'Cole',
+    44,
+    'F',
+    '100 Independence Dr',
+    'Menlo Park, CA 94025',
+    'Menlo Park',
+    'CA',
+    '94025'
+);
+
 --EMLPOYEE
 
 INSERT INTO EMPLOYEE
@@ -157,6 +171,12 @@ VALUES (
     5
 );
 
+INSERT INTO POTENTIAL_EMPLOYEE
+VALUES (
+    2,
+    7
+);
+
 --JOB_POSITION
 INSERT INTO JOB_POSITION
 VALUES (
@@ -171,6 +191,14 @@ VALUES (
     2,
     '25-NOV-2021',
     'Second job position', 
+    1
+);
+
+INSERT INTO JOB_POSITION
+VALUES (
+    11111,
+    '25-NOV-2021',
+    'Job position 11111', 
     1
 );
 
@@ -204,6 +232,14 @@ VALUES (
     4,
     2,
     2,
+    NULL
+);
+
+INSERT INTO JOB_APPLICATION
+VALUES (
+    5,
+    11111,
+    7,
     NULL
 );
 
@@ -252,6 +288,30 @@ INSERT INTO INTERVIEW
 VALUES (
     4,
     1,
+    TIMESTAMP '2022-1-15 8:00:00 -8:00',
+    70
+);
+
+INSERT INTO INTERVIEW
+VALUES (
+    5,
+    1,
+    TIMESTAMP '2022-1-15 8:00:00 -8:00',
+    70
+);
+
+INSERT INTO INTERVIEW
+VALUES (
+    5,
+    2,
+    TIMESTAMP '2022-1-15 8:00:00 -8:00',
+    70
+);
+
+INSERT INTO INTERVIEW
+VALUES (
+    5,
+    2,
     TIMESTAMP '2022-1-15 8:00:00 -8:00',
     70
 );
