@@ -28,3 +28,8 @@ WHERE   EXTRACT(MONTH FROM j.posted_date) = 1 AND
             SELECT d.dept_id FROM DEPARTMENT d
             WHERE d.dept_name='Marketing'
         );
+
+/*
+Query 3: 
+Return the ID and Name of the employees having no supervisees.
+*/        
