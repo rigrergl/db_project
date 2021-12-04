@@ -15,4 +15,16 @@ WHERE e.employee_id IN
             LEFT OUTER JOIN JOB_APPLICATION japp ON i.app_id=japp.app_id
         WHERE japp.job_id=11111
     );
-        
+
+/*
+Query 2: 
+Return the ID of all jobs which are posted 
+by department “Marketing” in January 2011.
+*/ 
+SELECT j.job_id FROM JOB_POSITION j
+WHERE   EXTRACT(MONTH FROM j.posted_date) = 1 AND
+        EXTRACT(YEAR FROM j.posted_date) = 2011 AND
+        j.dept_id IN (
+            SELECT d.dept_id FROM DEPARTMENT d
+            WHERE d.dept_name='Marketing'
+        );

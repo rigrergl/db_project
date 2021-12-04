@@ -27,6 +27,12 @@ VALUES (
     'First Department'
 );
 
+INSERT INTO DEPARTMENT 
+VALUES (
+    2,
+    'Marketing'
+);
+
 --PERSON
 INSERT INTO PERSON 
 VALUES(
@@ -200,6 +206,30 @@ VALUES (
     '25-NOV-2021',
     'Job position 11111', 
     1
+);
+
+INSERT INTO JOB_POSITION
+VALUES (
+    3,
+    '25-JAN-2011',
+    'Job by Marketing', 
+    2
+);
+
+INSERT INTO JOB_POSITION
+VALUES (
+    4,
+    '25-DEC-2010',
+    'Job by Marketing', 
+    2
+);
+
+INSERT INTO JOB_POSITION
+VALUES (
+    5,
+    '25-FEB-2011',
+    'Job by Marketing', 
+    2
 );
 
 --JOB_APPLICATION
