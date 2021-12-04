@@ -517,6 +517,22 @@ VALUES (
 
 INSERT INTO PRODUCT_PART
 VALUES (
+    2,
+    1,
+    1,
+    1
+);
+
+INSERT INTO PRODUCT_PART
+VALUES (
+    2,
+    2,
+    1,
+    1
+);
+
+INSERT INTO PRODUCT_PART
+VALUES (
     3,
     1,
     2,
