@@ -33,3 +33,24 @@ WHERE   EXTRACT(MONTH FROM j.posted_date) = 1 AND
 Query 3: 
 Return the ID and Name of the employees having no supervisees.
 */        
+SELECT  e.employee_id, 
+        p.f_name || ' ' || p.l_name AS full_name
+FROM EMPLOYEE e
+    LEFT OUTER JOIN PERSON p ON p.person_id = e.person_id
+WHERE e.supervisor_id IS NULL;
+
+/*
+Query 4: 
+Return the Id and Location of the marketing sites 
+which have no sale records during March, 2011.
+*/
+SELECT  s.site_id, 
+        s.addr_line_1,
+        s.addr_line_2,
+        s.city,
+        s.state_code,
+        s.zipcode
+FROM COMPANY_SITE s
+WHERE s.site_id NOT IN (
+        SELECT DISTINCT sh.site_id FROM SALE_HISTORY sh
+    );

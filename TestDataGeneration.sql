@@ -464,6 +464,17 @@ VALUES (
     '94025'
 );
 
+INSERT INTO COMPANY_SITE
+VALUES (
+    2,
+    'Site With No Sales',
+    '100 Independence Dr',
+    'Menlo Park, CA 94025',
+    'Menlo Park',
+    'CA',
+    '94025'
+);
+
 --SALE_HISTORY
 INSERT INTO SALE_HISTORY
 VALUES (
