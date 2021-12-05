@@ -54,3 +54,16 @@ FROM COMPANY_SITE s
 WHERE s.site_id NOT IN (
         SELECT DISTINCT sh.site_id FROM SALE_HISTORY sh
     );
+    
+/*
+Query 5: 
+Return the job’s id and description which does not 
+hire a suitable person one month after it is posted.
+*/
+SELECT DISTINCT jp.job_id, jp.description FROM JOB_POSITION jp
+     LEFT OUTER JOIN JOB_APPLICATION ja ON jp.job_id = ja.job_id
+WHERE   jp.chosen_candidate IS NULL AND
+        CURRENT_DATE - jp.posted_date > 31
+ORDER BY jp.job_id;
+        
+        

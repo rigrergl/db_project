@@ -187,17 +187,19 @@ VALUES (
 INSERT INTO JOB_POSITION
 VALUES (
     1,
-    '29-OCT-2021',
+    '30-NOV-2020',
     'First job position', 
+    1,
     1
 );
 
 INSERT INTO JOB_POSITION
 VALUES (
     2,
-    '25-NOV-2021',
+    '25-NOV-2020',
     'Second job position', 
-    1
+    1,
+    2
 );
 
 INSERT INTO JOB_POSITION
@@ -205,7 +207,8 @@ VALUES (
     11111,
     '25-NOV-2021',
     'Job position 11111', 
-    1
+    1,
+    NULL
 );
 
 INSERT INTO JOB_POSITION
@@ -213,7 +216,8 @@ VALUES (
     3,
     '25-JAN-2011',
     'Job by Marketing', 
-    2
+    2,
+    NULL
 );
 
 INSERT INTO JOB_POSITION
@@ -221,7 +225,8 @@ VALUES (
     4,
     '25-DEC-2010',
     'Job by Marketing', 
-    2
+    2,
+    NULL
 );
 
 INSERT INTO JOB_POSITION
@@ -229,7 +234,26 @@ VALUES (
     5,
     '25-FEB-2011',
     'Job by Marketing', 
+    2,
+    NULL
+);
+
+INSERT INTO JOB_POSITION
+VALUES (
+    6,
+    '25-FEB-2009',
+    'Very old job position', 
+    2,
     2
+);
+
+INSERT INTO JOB_POSITION
+VALUES (
+    7,
+    '4-DEC-2021',
+    'New job position', 
+    2,
+    NULL
 );
 
 --JOB_APPLICATION
@@ -238,7 +262,7 @@ VALUES (
     1,
     1,
     1,
-    NULL
+    'Y'
 );
 
 INSERT INTO JOB_APPLICATION
@@ -254,7 +278,7 @@ VALUES (
     3,
     1,
     2,
-    NULL
+    'N'
 );
 
 INSERT INTO JOB_APPLICATION
@@ -262,7 +286,7 @@ VALUES (
     4,
     2,
     2,
-    NULL
+    'Y'
 );
 
 INSERT INTO JOB_APPLICATION
@@ -271,6 +295,22 @@ VALUES (
     11111,
     7,
     NULL
+);
+
+INSERT INTO JOB_APPLICATION
+VALUES (
+    6,
+    2,
+    6,
+    NULL
+);
+
+INSERT INTO JOB_APPLICATION
+VALUES (
+    7,
+    6,
+    2,
+    'Y'
 );
 
 --INTERVIEW
@@ -287,6 +327,38 @@ VALUES (
     1,
     2,
     TIMESTAMP '2021-11-20 8:00:00 -8:00',
+    95
+);
+
+INSERT INTO INTERVIEW
+VALUES (
+    1,
+    2,
+    TIMESTAMP '2021-11-21 8:00:00 -8:00',
+    95
+);
+
+INSERT INTO INTERVIEW
+VALUES (
+    1,
+    2,
+    TIMESTAMP '2021-11-22 8:00:00 -8:00',
+    95
+);
+
+INSERT INTO INTERVIEW
+VALUES (
+    1,
+    2,
+    TIMESTAMP '2021-11-23 8:00:00 -8:00',
+    60
+);
+
+INSERT INTO INTERVIEW
+VALUES (
+    1,
+    2,
+    TIMESTAMP '2021-11-24 8:00:00 -8:00',
     95
 );
 

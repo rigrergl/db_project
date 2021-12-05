@@ -66,15 +66,17 @@ CREATE TABLE JOB_POSITION(
     posted_date DATE,
     description VARCHAR2(100),
     dept_id INTEGER NOT NULL,
+    chosen_candidate INTEGER,
     PRIMARY KEY (job_id),
-    FOREIGN KEY (dept_id) REFERENCES DEPARTMENT(dept_id)
+    FOREIGN KEY (dept_id) REFERENCES DEPARTMENT(dept_id),
+    FOREIGN KEY (chosen_candidate) REFERENCES PERSON(person_id)
 );
 
 CREATE TABLE JOB_APPLICATION(
     app_id INTEGER NOT NULL,
     job_id INTEGER NOT NULL,
     candidate_id INTEGER NOT NULL,
-    hired CHAR(1) CHECK (hired IN ('Y', 'N')),
+    hired CHAR(1) DEFAULT NULL CHECK (hired IN ('Y', 'N')),
     PRIMARY KEY (app_id),
     FOREIGN KEY (job_id) REFERENCES JOB_POSITION(job_id),
     FOREIGN KEY (candidate_id) REFERENCES PERSON(person_id) 
