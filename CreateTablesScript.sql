@@ -15,6 +15,7 @@ CREATE TABLE PERSON(
     city VARCHAR(15),
     state_code VARCHAR(2),
     zipcode VARCHAR(16),
+    email_address VARCHAR(50),
     PRIMARY KEY (person_id)
 );
 

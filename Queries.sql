@@ -155,7 +155,15 @@ HAVING COUNT(s.employee_id) >= (
     SELECT COUNT(*) FROM DEPARTMENT
 );
 
-
+/*
+Query 12: 
+Return the name and email address of the interviewee who is selected.
+*/
+SELECT  jp.job_id,
+        p.f_name || ' ' || p.l_name AS "NAME",
+        p.email_address
+FROM JOB_POSITION jp
+    INNER JOIN PERSON p ON p.person_id=jp.chosen_candidate;
 
 
 

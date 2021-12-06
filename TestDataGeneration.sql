@@ -45,7 +45,8 @@ VALUES(
     'Menlo Park, CA 94025',
     'Menlo Park',
     'CA',
-    '94025'
+    '94025',
+    'rigre@gmail.com'
 );
 
 INSERT INTO PERSON 
@@ -59,7 +60,8 @@ VALUES(
     'Menlo Park, CA 94025',
     'Menlo Park',
     'CA',
-    '94025'
+    '94025',
+    'mike.robinson@gmail.com'
 );
 
 INSERT INTO PERSON 
@@ -73,7 +75,8 @@ VALUES(
     'Menlo Park, CA 94025',
     'Menlo Park',
     'CA',
-    '94025'
+    '94025',
+    'gabriella.spencer@gmail.com'
 );
 
 INSERT INTO PERSON 
@@ -87,7 +90,8 @@ VALUES(
     'Menlo Park, CA 94025',
     'Menlo Park',
     'CA',
-    '94025'
+    '94025',
+    'ethan.miller@gmail.com'
 );
 
 INSERT INTO PERSON 
@@ -101,7 +105,8 @@ VALUES(
     'Menlo Park, CA 94025',
     'Menlo Park',
     'CA',
-    '94025'
+    '94025',
+    'potential.employee@gmail.com'
 );
 
 INSERT INTO PERSON 
@@ -115,7 +120,8 @@ VALUES(
     'Menlo Park, CA 94025',
     'Menlo Park',
     'CA',
-    '94025'
+    '94025',
+    'blah@gmail.com'
 );
 
 INSERT INTO PERSON 
@@ -129,7 +135,8 @@ VALUES(
     'Menlo Park, CA 94025',
     'Menlo Park',
     'CA',
-    '94025'
+    '94025',
+    'hellen.cole@gmail.com'
 );
 
 --EMLPOYEE
