@@ -140,7 +140,8 @@ VALUES (
     1,
     'Senior',
     'Software Developer',
-    NULL
+    NULL,
+    1
 );
 
 INSERT INTO EMPLOYEE
@@ -149,6 +150,7 @@ VALUES (
     2,
     'Junior',
     'Software Developer',
+    1,
     1
 );
 
@@ -158,6 +160,7 @@ VALUES (
     3,
     'Senior',
     'Graphic Designer',
+    1,
     1
 );
 
@@ -167,7 +170,8 @@ VALUES (
     4,
     'Senior',
     'Salesman',
-    NULL
+    NULL,
+    1
 );
 
 --POTENTIAL_EMPLOYEE
@@ -226,6 +230,15 @@ VALUES (
     '25-DEC-2010',
     'Job by Marketing', 
     2,
+    NULL
+);
+
+INSERT INTO JOB_POSITION
+VALUES (
+    12345,
+    '25-DEC-2010',
+    'Job by Marketing', 
+    1,
     NULL
 );
 
@@ -311,6 +324,22 @@ VALUES (
     6,
     2,
     'Y'
+);
+
+INSERT INTO JOB_APPLICATION
+VALUES (
+    8,
+    12345,
+    1,
+    NULL
+);
+
+INSERT INTO JOB_APPLICATION
+VALUES (
+    9,
+    12345,
+    2,
+    NULL
 );
 
 --INTERVIEW

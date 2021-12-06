@@ -31,9 +31,11 @@ CREATE TABLE EMPLOYEE(
     emp_rank VARCHAR(15),
     title VARCHAR(30),
     supervisor_id INTEGER,
+    current_dept INTEGER,
     PRIMARY KEY (employee_id),
     FOREIGN KEY (person_id) REFERENCES PERSON(person_id),
-    FOREIGN KEY (supervisor_id) REFERENCES EMPLOYEE(employee_id)
+    FOREIGN KEY (supervisor_id) REFERENCES EMPLOYEE(employee_id),
+    FOREIGN KEY (current_dept) REFERENCES DEPARTMENT(dept_id)
 );
 
 CREATE TABLE CUSTOMER(

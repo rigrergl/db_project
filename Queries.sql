@@ -93,3 +93,15 @@ WHERE d.dept_id NOT IN (
     SELECT DISTINCT dept_id FROM JOB_POSITION jp
     WHERE jp.posted_date  BETWEEN '1-JAN-2011' AND '1-FEB-2011'
 );
+
+/*
+Query 8: 
+Return the ID, Name, and Department ID of the existing employees who apply job “12345”.
+*/
+SELECT  e.employee_id, 
+        p.f_name || ' ' || p.l_name AS "NAME",
+        e.current_dept
+FROM JOB_APPLICATION ja
+    JOIN EMPLOYEE e ON e.person_id=ja.candidate_id
+    JOIN PERSON p ON p.person_id=ja.candidate_id
+WHERE ja.job_id=12345
