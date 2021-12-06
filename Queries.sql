@@ -37,7 +37,10 @@ SELECT  e.employee_id,
         p.f_name || ' ' || p.l_name AS full_name
 FROM EMPLOYEE e
     LEFT OUTER JOIN PERSON p ON p.person_id = e.person_id
-WHERE e.supervisor_id IS NULL;
+WHERE e.employee_id NOT IN (
+    SELECT e.supervisor_id FROM EMPLOYEE e 
+    WHERE e.supervisor_id IS NOT NULL
+);
 
 /*
 Query 4: 
