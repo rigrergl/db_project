@@ -123,3 +123,39 @@ Query 10:
 Return the product type whose net profit is 
 highest in the company (money earned minus the part cost).
 */
+SELECT type_id FROM (
+    SELECT  p.prod_id, 
+            pt.type_id, 
+            pt.list_price * sale_count AS money_earned,
+            product_part_cost.part_cost * sale_count AS total_part_cost,
+            (pt.list_price * sale_count) - (product_part_cost.part_cost * sale_count) AS net_profit
+    FROM (
+                SELECT sh.prod_id, COUNT(*) as sale_count FROM SALE_HISTORY sh
+                GROUP BY sh.prod_id
+        ) sales_count
+    LEFT OUTER JOIN PRODUCT p ON p.prod_id=sales_count.prod_id
+    LEFT OUTER JOIN PRODUCT_TYPE pt ON pt.type_id = p.prod_type
+    LEFT OUTER JOIN (
+        SELECT pp.prod_id, SUM(price * amount) as part_cost FROM PRODUCT_PART pp
+        INNER JOIN PART_TYPE_LISTING ptl ON ptl.vendor_id=pp.current_vendor AND ptl.part_type=pp.part_type
+        GROUP BY pp.prod_id
+    ) product_part_cost ON product_part_cost.prod_id=p.prod_id
+)
+ORDER BY net_profit DESC
+FETCH NEXT 1 ROW ONLY;
+
+/*
+Query 11: 
+Return the name and id of the employees who has 
+worked in all departments after hired by the company
+*/
+SELECT s.employee_id FROM SHIFT s
+GROUP BY s.employee_id
+HAVING COUNT(s.employee_id) >= (
+    SELECT COUNT(*) FROM DEPARTMENT
+);
+
+
+
+
+

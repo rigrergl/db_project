@@ -789,4 +789,27 @@ VALUES (
     1
 );
 
+--SHIFT
+INSERT INTO SHIFT
+VALUES (
+    1,
+    1,
+    '22-DEC-2020',
+    NULL
+);
 
+INSERT INTO SHIFT
+VALUES (
+    1,
+    2,
+    '01-AUG-2020',
+    '21-DEC-2020'
+);
+
+INSERT INTO SHIFT
+VALUES (
+    2,
+    1,
+    '01-AUG-2020',
+    NULL
+);
