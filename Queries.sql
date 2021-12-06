@@ -104,4 +104,11 @@ SELECT  e.employee_id,
 FROM JOB_APPLICATION ja
     JOIN EMPLOYEE e ON e.person_id=ja.candidate_id
     JOIN PERSON p ON p.person_id=ja.candidate_id
-WHERE ja.job_id=12345
+WHERE ja.job_id=12345;
+
+/*
+Query 9: 
+Return the best seller’s type in the company (sold the most items).
+*/
+SELECT sh.prod_id, COUNT(sh.prod_id) as items_sold FROM SALE_HISTORY sh
+GROUP BY sh.prod_id;
