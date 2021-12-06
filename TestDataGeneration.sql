@@ -665,12 +665,14 @@ VALUES (
 --PART_TYPE
 INSERT INTO PART_TYPE
 VALUES (
-    1
+    1,
+    'Cup'
 );
 
 INSERT INTO PART_TYPE
 VALUES (
-    2
+    2,
+    'Smething'
 );
 
 --VENDOR
@@ -693,7 +695,21 @@ VALUES (
     2,
     800,
     'cde.com',
-    'CDE Microchips',
+    'DEF Microchips',
+    'CDF5',
+    '100 Independence Dr',
+    'Menlo Park, CA 94025',
+    'Menlo Park',
+    'CA',
+    '94025'
+);
+
+INSERT INTO VENDOR
+VALUES (
+    3,
+    800,
+    'cde.com',
+    'GHI Microchips',
     'CDF5',
     '100 Independence Dr',
     'Menlo Park, CA 94025',
@@ -707,28 +723,40 @@ INSERT INTO PART_TYPE_LISTING
 VALUES (
     1,
     1,
-    50.0
+    50.0,
+    4.5
 );
 
 INSERT INTO PART_TYPE_LISTING
 VALUES (
     2,
     1,
-    75.0
+    75.0,
+    3.5
 );
 
 INSERT INTO PART_TYPE_LISTING
 VALUES (
     1,
     2,
-    50.0
+    50.0,
+    3.5
 );
 
 INSERT INTO PART_TYPE_LISTING
 VALUES (
     2,
     2,
-    25.0
+    25.0,
+    3.5
+);
+
+INSERT INTO PART_TYPE_LISTING
+VALUES (
+    3,
+    1,
+    40.0,
+    3.5
 );
 
 --PRODUCT_PART

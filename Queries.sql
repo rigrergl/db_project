@@ -195,3 +195,12 @@ FROM VIEW_1
 ORDER BY AVG_SALARY DESC
 FETCH NEXT 1 ROW ONLY;
 
+/*
+Query 15: 
+Return the ID and Name of the vendor who supply 
+part whose name is “Cup” and weight is smaller 
+than 4 pound and the price is lowest among all vendors.
+*/
+SELECT * FROM PART_TYPE_LISTING ptl
+    INNER JOIN PART_TYPE pt ON pt.
+    ;

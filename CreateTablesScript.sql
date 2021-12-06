@@ -126,6 +126,7 @@ CREATE TABLE VENDOR(
 
 CREATE TABLE PART_TYPE (
     type_id INTEGER NOT NULL,
+    part_name VARCHAR(50)
     PRIMARY KEY (type_id)
 );
 
@@ -144,6 +145,7 @@ CREATE TABLE PART_TYPE_LISTING(
     vendor_id INTEGER NOT NULL,
     part_type INTEGER NOT NULL,
     price NUMBER,
+    weight NUMBER,
     PRIMARY KEY (vendor_id, part_type),
     FOREIGN KEY (vendor_id) REFERENCES VENDOR(vendor_id),
     FOREIGN KEY (part_tYpe) REFERENCES PART_TYPE(type_id) 
