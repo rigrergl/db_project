@@ -66,7 +66,7 @@ WHERE   jp.chosen_candidate IS NULL AND
         CURRENT_DATE - jp.posted_date > 31
 ORDER BY jp.job_id;
         
- /*
+/*
 Query 6: 
 Return the ID and Name of the salesmen who 
 have sold all product type whose price is above $200.
@@ -82,4 +82,14 @@ HAVING COUNT(sh.salesman_id) > (
     SELECT COUNT(p.prod_id) FROM PRODUCT p
         JOIN PRODUCT_TYPE pt ON p.prod_type=pt.type_id
     WHERE pt.list_price > 200
+);
+
+/*
+Query 7: 
+Return the department’s id and name which has no job post during 1/1/2011 and 2/1/2011.
+*/
+SELECT dept_id FROM DEPARTMENT d
+WHERE d.dept_id NOT IN (
+    SELECT DISTINCT dept_id FROM JOB_POSITION jp
+    WHERE jp.posted_date  BETWEEN '1-JAN-2011' AND '1-FEB-2011'
 );
