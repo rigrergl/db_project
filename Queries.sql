@@ -110,5 +110,16 @@ WHERE ja.job_id=12345;
 Query 9: 
 Return the best seller’s type in the company (sold the most items).
 */
-SELECT sh.prod_id, COUNT(sh.prod_id) as items_sold FROM SALE_HISTORY sh
-GROUP BY sh.prod_id;
+SELECT p.prod_type FROM (
+    SELECT sh.prod_id, COUNT(sh.prod_id) as items_sold FROM SALE_HISTORY sh
+    GROUP BY sh.prod_id
+    ORDER BY items_sold DESC
+    FETCH NEXT 1 ROW ONLY
+    ) best_seller
+INNER JOIN PRODUCT p ON p.prod_id=best_seller.prod_id;
+
+/*
+Query 10: 
+Return the product type whose net profit is 
+highest in the company (money earned minus the part cost).
+*/
