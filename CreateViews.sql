@@ -35,4 +35,4 @@ SELECT prod_id, SUM(total_cost) AS part_purchase_cost FROM
         LEFT OUTER JOIN PART_TYPE_LISTING PTL ON PTL.vendor_id=PP.current_vendor AND PTL.part_type=PP.part_type
     )product_cost_by_part_type
 GROUP BY prod_id
-ORDER BY prod_id;   
+ORDER BY prod_id;  

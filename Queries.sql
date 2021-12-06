@@ -66,4 +66,20 @@ WHERE   jp.chosen_candidate IS NULL AND
         CURRENT_DATE - jp.posted_date > 31
 ORDER BY jp.job_id;
         
-        
+ /*
+Query 6: 
+Return the ID and Name of the salesmen who 
+have sold all product type whose price is above $200.
+*/
+SELECT DISTINCT sh.prod_id, sh.salesman_id FROM SALE_HISTORY sh 
+WHERE sh.prod_id IN (
+    SELECT p.prod_id FROM PRODUCT p
+        JOIN PRODUCT_TYPE pt ON p.prod_type=pt.type_id
+    WHERE pt.list_price > 200
+)
+GROUP BY sh.salesman_id, sh.prod_id
+HAVING COUNT(sh.salesman_id) > (
+    SELECT COUNT(p.prod_id) FROM PRODUCT p
+        JOIN PRODUCT_TYPE pt ON p.prod_type=pt.type_id
+    WHERE pt.list_price > 200
+);

@@ -471,12 +471,18 @@ VALUES (
 INSERT INTO PRODUCT_TYPE 
 VALUES (
     1,
-    200.0
+    4250.0
 );
 INSERT INTO PRODUCT_TYPE 
 VALUES (
     2,
     50.0
+);
+
+INSERT INTO PRODUCT_TYPE 
+VALUES (
+    3,
+    300.0
 );
 
 --PRODUCT
@@ -602,6 +608,24 @@ VALUES (
     1
 );
 
+INSERT INTO SALE_HISTORY
+VALUES (
+    2,
+    1,
+    1,
+    TIMESTAMP '2022-1-15 8:00:00 -8:00',
+    1
+);
+
+INSERT INTO SALE_HISTORY
+VALUES (
+    3,
+    1,
+    2,
+    TIMESTAMP '2022-1-15 8:00:00 -8:00',
+    1
+);
+
 --PART_TYPE
 INSERT INTO PART_TYPE
 VALUES (
@@ -647,28 +671,28 @@ INSERT INTO PART_TYPE_LISTING
 VALUES (
     1,
     1,
-    200.0
+    50.0
 );
 
 INSERT INTO PART_TYPE_LISTING
 VALUES (
     2,
     1,
-    150.0
+    75.0
 );
 
 INSERT INTO PART_TYPE_LISTING
 VALUES (
     1,
     2,
-    1000.0
+    50.0
 );
 
 INSERT INTO PART_TYPE_LISTING
 VALUES (
     2,
     2,
-    1200.0
+    25.0
 );
 
 --PRODUCT_PART
