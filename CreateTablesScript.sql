@@ -126,7 +126,7 @@ CREATE TABLE VENDOR(
 
 CREATE TABLE PART_TYPE (
     type_id INTEGER NOT NULL,
-    part_name VARCHAR(50)
+    part_name VARCHAR(50),
     PRIMARY KEY (type_id)
 );
 
