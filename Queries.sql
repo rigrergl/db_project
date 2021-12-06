@@ -201,6 +201,10 @@ Return the ID and Name of the vendor who supply
 part whose name is “Cup” and weight is smaller 
 than 4 pound and the price is lowest among all vendors.
 */
-SELECT * FROM PART_TYPE_LISTING ptl
-    INNER JOIN PART_TYPE pt ON pt.
-    ;
+SELECT v.vendor_id, v.vendor_name FROM PART_TYPE_LISTING ptl
+    INNER JOIN PART_TYPE pt ON pt.type_id = ptl.part_type
+    INNER JOIN VENDOR v ON v.vendor_id = ptl.vendor_id
+WHERE   upper(pt.part_name)='CUP' AND
+        ptl.weight < 4
+ORDER BY ptl.price
+FETCH NEXT 1 ROW ONLY;
