@@ -322,7 +322,7 @@ VALUES (
     6,
     2,
     6,
-    NULL
+    'Y'
 );
 
 INSERT INTO JOB_APPLICATION

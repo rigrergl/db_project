@@ -165,5 +165,22 @@ SELECT  jp.job_id,
 FROM JOB_POSITION jp
     INNER JOIN PERSON p ON p.person_id=jp.chosen_candidate;
 
+/*
+Query 13: 
+Retrieve the name, phone number, email address of the 
+interviewees selected for all the jobs they apply.
+*/
+SELECT ja.candidate_id FROM JOB_APPLICATION ja
+    INNER JOIN (
+                SELECT ja.candidate_id, COUNT(*) as applied_count FROM JOB_APPLICATION ja
+                GROUP BY ja.candidate_id
+    ) applied_counts ON ja.candidate_id=applied_counts.candidate_id
+    INNER JOIN (
+                SELECT ja.candidate_id, COUNT(*) as hired_count FROM JOB_APPLICATION ja
+                WHERE hired='Y'
+                GROUP BY ja.candidate_id
+    ) hired_counts ON ja.candidate_id=hired_counts.candidate_id
+WHERE applied_count = hired_count;
+
 
 
