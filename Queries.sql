@@ -182,5 +182,16 @@ SELECT ja.candidate_id FROM JOB_APPLICATION ja
     ) hired_counts ON ja.candidate_id=hired_counts.candidate_id
 WHERE applied_count = hired_count;
 
-
+/*
+Query 14: 
+Return the employee’s name and id whose 
+average monthly salary is highest in the company.
+*/
+SELECT  e.employee_id, 
+        p.f_name || ' ' || p.l_name AS "NAME" 
+FROM VIEW_1
+    INNER JOIN EMPLOYEE e ON e.employee_id=VIEW_1.employee_id
+    INNER JOIN PERSON p on p.person_id=e.person_id
+ORDER BY AVG_SALARY DESC
+FETCH NEXT 1 ROW ONLY;
 
